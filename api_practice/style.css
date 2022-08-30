@@ -1,0 +1,134 @@
+html{
+	width:100%;
+	height: 100%;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+/*******************Contenido general******************************/
+body{
+	background:linear-gradient(to bottom, rgb(85,150,172), rgb(5,99,133)100%);
+	background-repeat:no-repeat;
+	background-size:cover;
+	 width:100%;
+	 height:100%;
+}
+#external_container{
+	width:100%;
+	height:100%;
+}
+.main_class{
+width:100%;
+height:100%;
+}
+.imagenes_profetas{
+	width:60%;
+	animation-name:imagenes;
+	animation-duration:3s;
+}
+.boton{
+	width:50px;
+	height:50px;
+}
+.flecha{
+	font-size: 2rem;
+}
+
+/*******************variaciones movil******************************/
+/*******************reemplaza external_card_class_desktop1*************/
+.external_card_class{
+	width:80%;
+	height: 80%;
+	background-color: white;
+	border-radius:5px;
+	box-shadow: 0 0 0 1px #163772 inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 4px 0 0      #757691,0 4px 0 1px rgba(0, 0, 0, 0.4),0 4px 2px 1px rgba(0, 0, 0, 0.5);
+
+}
+/*******************d-flex flex-column justify-content-around align-items-center external_card_class_desktop2*************/
+.hidden{
+	display:none;
+}
+/*******************variaciones desktop******************************/
+.external_card_class_desktop1{
+	width:30%;
+	height: 80%;
+	background-color: white;
+	border-radius:5px;
+	box-shadow: 0 0 0 1px #163772 inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 4px 0 0      #757691,0 4px 0 1px rgba(0, 0, 0, 0.4),0 4px 2px 1px rgba(0, 0, 0, 0.5);
+
+}
+.external_card_class_desktop2{
+	opacity:.5;
+	width:25%;
+	height: 70%;
+	background-color: white;
+	border-radius:5px;
+	box-shadow: 0 0 0 1px #163772 inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 4px 0 0      #757691,0 4px 0 1px rgba(0, 0, 0, 0.4),0 4px 2px 1px rgba(0, 0, 0, 0.5);
+
+}
+/******************Animaciones*******************/ 
+/******************Animacion grande*******************/ 
+.nombre{
+	animation-name:nombre;
+	animation-duration:2s;
+	align-items: center
+	;
+}
+@keyframes nombre{
+	from{transform:translateY(-20px);
+			 opacity:0;}
+	to{transform: translateY(0);
+		opacity:1;}
+}
+.fecha{
+	animation-name:fecha;
+	animation-duration:2s;
+}
+@keyframes fecha{
+	from{transform:translateX(20px);
+			 opacity:0;}
+	to{transform: translateX(0);
+		opacity:1;}
+}
+.lugar{
+	animation-name:lugar;
+	animation-duration:2s;
+}
+@keyframes lugar{
+	from{transform:translateX(-20px);
+			 opacity:0;}
+	to{transform: translateX(0);
+		opacity:1;}
+}
+@keyframes imagenes{
+	from{ opacity:0;}
+	to{ opacity:1;}
+}
+/******************Animacion pequeña*******************/ 
+.nombre2{
+	animation-name:nombre2;
+	animation-duration:2s;
+	align-items: center;
+}
+@keyframes nombre2{
+	from{opacity:0;}
+	to{opacity:1;}
+}
+.fecha2{
+	animation-name:fecha2;
+	animation-duration:2s;
+}
+@keyframes fecha2{
+	from{opacity:0;}
+	to{opacity:1;}
+}
+.lugar2{
+	animation-name:lugar2;
+	animation-duration:2s;
+}
+@keyframes lugar2{
+	from{opacity:0;}
+	to{opacity:1;}
+}
