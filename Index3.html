@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            width:100%;
+            height:100%;
+        }
+    
+        #section_1{
+            width:100%;
+            height:100%;
+            display:flex;
+            flex-direction: column;
+            justify-content:space-around;
+            align-items:center;
+        }
+        .section_2_class{
+            width:40%;
+            height:40px;
+            display: flex;
+            justify-content:space-around;
+            border:5px solid black;
+            border-radius:5px;
+        }
+        .section_3_class{
+            width:40%;
+            height:40px;
+            display: flex;
+            justify-content:space-around;
+            border:5px solid black;
+            border-radius:5px;
+        }
+        .section_4_class{
+            width:40%;
+            height:40px;
+            display: flex;
+            justify-content:space-around;
+            border:5px solid black;
+            border-radius:5px;
+        }
+        .section_5_class{
+            width:40%;
+            height:40px;
+            display: flex;
+            justify-content:space-around;
+            border:5px solid red;
+            border-radius:5px;
+        }
+        .hidden{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <section id="section_1">
+        <section id="section_2" class="section_2_class">
+            <button id="inicio">Inicio</button>
+            <button id="salir">Salir</button>
+        </section>
+        <section id="section_3" class="hidden">
+            <button id="operaciones">Operaciones</button>
+            <button id="resultado">Resultado</button>
+        </section>
+        <section id="section_4" class="hidden">
+            <button id="suma">Suma</button>
+            <button id="resta">Resta</button>
+            <button id="division">Division</button>
+            <button id="multiplicacion">Multiplicacion</button>
+        </section>
+        <section id="section_5" class="hidden">
+            <label id="resultado_final"></label>
+            <button id="reiniciar">Reiniciar</button>
+        </section>
+    </section>
+    <script>
+       let boton_1 = document.getElementById("inicio");
+       let boton_2 = document.getElementById("salir");
+       let boton_3 = document.getElementById("operaciones");
+       let boton_4 = document.getElementById("resultado");
+       let boton_5 = document.getElementById("suma");
+       let boton_6 = document.getElementById("resta");
+       let boton_7 = document.getElementById("division");
+       let boton_8 = document.getElementById("multiplicacion");
+       let label = document.getElementById("resultado_final")
+       let boton_9 = document.getElementById("reiniciar");
+       let section_2 = document.getElementById("section_2");
+       let section_3 = document.getElementById("section_3");
+       let section_4 = document.getElementById("section_4");
+       let section_5 = document.getElementById("section_5");
+       let a = 10;
+       let b = 5;
+       boton_1.addEventListener("click", () =>{
+        section_3.classList.remove("hidden");
+        section_3.classList.add("section_3_class");
+       });
+       boton_2.addEventListener("click", () =>{
+        confirm("Estas seguro que quieres salir?");
+       });
+       boton_3.addEventListener("click", () =>{ 
+        section_4.classList.remove("hidden");
+        section_4.classList.add("section_4_class");
+       });
+       boton_4.addEventListener("click", () =>{
+        alert("No has realizado ninguna operacion ")
+       });
+       boton_5.addEventListener("click", () =>{ 
+        c = a + b;
+        section_5.classList.remove("hidden");
+        section_5.classList.add("section_5_class");
+        label.textContent= c;
+       });
+       boton_6.addEventListener("click", () =>{ 
+        c = a - b;
+        section_5.classList.remove("hidden");
+        section_5.classList.add("section_5_class");
+        label.textContent= c;
+       });
+       boton_7.addEventListener("click", () =>{ 
+        c = a / b;
+        section_5.classList.remove("hidden");
+        section_5.classList.add("section_5_class");
+        label.textContent= c;
+       });
+       boton_8.addEventListener("click", () =>{ 
+        c = a * b;
+        section_5.classList.remove("hidden");
+        section_5.classList.add("section_5_class");
+        label.textContent= c;
+       });
+       boton_9.addEventListener("click", () =>{
+        location.reload();
+        });
+    </script>
+</body>
+</html>

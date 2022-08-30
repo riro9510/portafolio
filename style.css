@@ -1,0 +1,246 @@
+/*General*/
+html{
+    width:100%;
+    height:100%;
+    scroll-behavior: smooth;
+}
+body{
+    width:100%; 
+    height:100%;
+}
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+.none{
+    display:none;
+}
+.ul_section_2_2_class{
+  text-align:center;  
+}
+.li_section2_2_class{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+.header{
+    width:100vw;
+    height:100vh;
+    background-color: #fff;
+}
+.titulo_header_class{
+    text-align: center;
+}
+.sub_header_class{
+    text-align: center;
+    font-size: 1.5rem;
+}
+.invisible{
+    visibility: hidden;
+}
+/* Termina seccion header */
+/* Inicia Section 1 */
+.section_1_class{
+    width:100vw;
+    height:100vh;
+    background-color:black;
+}
+.section_1_2_class{
+    width:100vw;
+    height:100vh;
+    background-image:url("./Riro.jpg");
+    background-size: contain;
+    background-position:center;
+    background-repeat: no-repeat;
+
+}
+.section_1_3_class{
+    width:100vw;
+}
+.h3_section1_3_class{
+    font-size: 2 rem;
+    color:white;
+    text-align: center;
+    animation-name:atributos;
+    animation-duration: 2s;
+}
+@keyframes atributos{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+.h1_section1_2_class{
+    color:white;
+    text-align: center;
+    font-size: 3.5rem;
+}
+/*Termina section 1 */
+/*Comienza section 2 */
+.section_2_class{
+    width:100vw;
+    height:100vh;
+    background-color:brown;
+}
+.section_2_class_movil{
+    width:100vw;
+    height:300vh;
+    background-color:brown;
+}
+/* Crear class para reemplazar cuando sea movil a 300 vh en vista movil y 100vh en normal*/
+/* agregar column-row a class_2_3 2_4 y 2_5 */ 
+.section_2_1_class{
+    width:100vw;
+    height:100vh;   
+}
+.section_2_1_class_movil{
+    width:100vw;
+    height:300vh;   
+}
+/*Revertir cambio en altura*/
+.section_2_2_class{
+    width:100%;
+    height:30%;
+}
+
+.li_section2_2_class{
+    list-style: none;
+}
+.h3_section2_2{
+    text-align: center;
+    font-size: 1.5rem;
+    color:white;
+}
+/*Revertir cambio en altura*/
+.section2_3_class{
+    width: 100%;
+    height:30%;
+}
+/*Revertir cambio en altura*/
+.section1_pictures_section3_class{
+    height:40%;
+}
+.section1_pictures_section3_class_movil{
+    width:60%;
+}
+
+.pictures_section_3_class{
+    height:100%;
+    object-fit: contain;
+}
+.pictures_section_3_class{
+    width:100%;
+    object-fit: contain;
+}
+/*Revertir cambio en altura era height de 100%*/
+.section1_2_pictures_section3_class{
+    height:40%;
+}
+.section1_2_pictures_section3_class_b{
+    height:50%;
+}
+.pictures2_section_3_class{
+    height:100%;
+    object-fit: contain;
+}
+/*Revertir cambio en altura*/
+.section_2_4_class{
+    width:100%;
+    height:30%;
+}
+.section_3_class{
+    width:100vw;
+    height:100vh;
+    background-color:gray;
+}
+.section_3_class_movil{
+    width:100vw;
+    height:200vh;
+    background-color:gray;
+}
+.section_3_1_class{
+    width:100vw;
+    height:100vh;   
+}
+.section_3_1_class_movil{
+    width:100vw;
+    height:200vh;   
+}
+.section_4_class{
+    width:100vw;
+    height:100vh;
+    background-color:skyblue;
+}
+.section_4_class_movil{
+    width:100vw;
+    height:100vh;
+    background-color:skyblue;
+}
+.section_4_1_class{
+    width:100vw;
+    height:100vh;   
+}
+.section_4_1_class_movil{
+    width:100vw;
+    height:100vh;   
+}
+.h1_section4_2_class{
+    color:white;
+    text-align: center;
+    font-size: 2.5rem;
+}
+.section_4_2_class{
+    width:100%;
+    height:10%;
+}
+.section_5_1_class{
+    width:100vw;
+    height:100vh;
+    background-color:#ffff;
+}
+.section_5_1_class_movil{
+    width:100vw;
+    height:100vh;
+    background-color:#ffff;
+}
+.h1_section5_2_class{
+    color:black;
+    text-align: center;
+    font-size: 3.5rem;   
+}
+.h3_section5_3_class{
+    color:black;
+    text-align: center;
+    font-size: 2.5rem;
+}
+.h3_section5_3_class_movil{
+    color:black;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.section_6_class{
+    width:100vw;
+    background-color: aqua;
+}
+.section_6_img_class{
+    width:100%;
+}
+.imagen_section_6_class{
+    width:40%;
+    object-fit: contain;
+    z-index:1;
+}
+.mundo{
+    animation-name: giro;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes giro {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+.label_6{
+    color:green;
+}
+.h3_section_6_1_2_class{
+    text-align: center;
+}

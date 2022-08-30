@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "..\\Git"
+		},
+		{
+			"path": "..\\Module_3"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Folder",
+		"liveServer.settings.port": 5501
+	}
+}
