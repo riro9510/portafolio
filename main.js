@@ -84,11 +84,7 @@ window.addEventListener("load", () => {
 
   }
 });
-window.addEventListener("resize", () => {
-  if ((screen >= 700)||(screen<=700)) {
-		location.reload();
-  }
-});
+
 let saludo = document.getElementById("titulo_header");
 let saludo2 = document.getElementById("sub_header");
 let header = document.getElementById("header_id");
