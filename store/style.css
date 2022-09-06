@@ -138,12 +138,11 @@ html, body{
 .container_class{
   width:296px;
   height:403px; 
-  outline:solid red;
+  
 }
 .container_img_label{
   width:264px;
   height:234px;
-  outline:solid blue;
 }
 .container_img_label{
     margin-top:15px;
@@ -151,13 +150,11 @@ html, body{
 .container_img{
     width:226px;
     height:209px;
-    outline:solid red;
 }
 .imagen{
     height:100%;
     width:100%;
     object-fit:contain;
-    border: 1px solid green;
 }
 .container_label_class{
     width:100%;
