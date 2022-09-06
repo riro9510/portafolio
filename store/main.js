@@ -108,7 +108,7 @@ caja_principal.innerHTML+=card;
          // let stock_carrito = element.stock;
           let precio_carrito = element.precio;
           let elementos_carrito = `
-          <div class="container_carrito_class">
+          <div id="contenedor_${index}" class="container_carrito_class">
           <div class="container_carrito_imagen d-flex flex-column justify-content-center align-items-center">
             <div class="container2_carrito_imagen color1_class rounded d-flex flex-column justify-content-center align-items-center">
             <img class="carrito_imagen" src="${imagen_carrito}">
@@ -127,7 +127,7 @@ caja_principal.innerHTML+=card;
           <button disabled=true id="bttnmenos_${index}" class="btn btn-outline-success menos">-</button><label class="cantidad">1</label><button id="bttnmas_${index}" class="btn btn-success mas">+</button>
         </div>
         <div class="eliminar_i d-flex justify-content-center align-items-center">
-          <i class="fa-solid fa-trash bote_basura_i"></i>
+          <i id="bote_${index}"class="fa-solid fa-trash bote_basura_i"></i>
         </div>
         </div>
           `
@@ -160,8 +160,11 @@ caja_principal.innerHTML+=card;
            cantidad_carrito;
           console.log(cantidad_carrito);
           label2.textContent = cantidad_carrito;
+          carrito_compras[index_elemento].cantidad=cantidad_carrito;
           cantidad_a_pagar = precio[elemento.parentElement.id.split("_")[1]];
-          cantidad_a_pagar.textContent = cantidad_carrito * precio_final;
+          let total_pagar2 = cantidad_carrito * precio_final;
+          cantidad_a_pagar.textContent = total_pagar2;
+          carrito_compras[index_elemento].pagar =total_pagar2;
         };});});
          //boton_mas
          mas.forEach(element =>{
@@ -190,11 +193,27 @@ caja_principal.innerHTML+=card;
           label2 = label[index_elemento]; 
           console.log(label2);
           label2.textContent = cantidad_carrito;
+          carrito_compras[index_elemento].cantidad=cantidad_carrito;
+          console.log(carrito_compras[index_elemento]);
           let cantidad_a_pagar = precio[element.parentElement.id.split("_")[1]];
-          cantidad_a_pagar.textContent = cantidad_carrito * precio_final;
-        };}); });
+          let total_pagar2 = cantidad_carrito * precio_final;
+          cantidad_a_pagar.textContent = total_pagar2;
+          carrito_compras[index_elemento].pagar =total_pagar2;
+        }
+  
+        ;}); });
         })
-        
+        let bote_basura = document.querySelectorAll(".bote_basura_i");
+        let secciones_carrito = document.querySelectorAll(".container_carrito_class");
+        bote_basura.forEach(bote => {
+          
+          bote.addEventListener("click", () =>{
+            let indexb = bote.id.split("_")[1];;
+           delete(carrito_compras[indexb]);
+           secciones_carrito[indexb].textContent=""; 
+           console.log(carrito_compras);
+          });
+        });
  } });
         home.addEventListener("click", () => {
           carrito_section.innerHTML="";
@@ -231,8 +250,68 @@ caja_principal.innerHTML+=card;
         element.classList.remove("d-flex", "justify-content-center", "align-items-center");
         element.classList.add("hidden");
           });
+          let nombres_productos = document.getElementById("lista_productos");
+          let cantidad_productos = document.getElementById("cantidad_productos");
+          let totales = document.getElementById("total_pagar_productos");
+          let subtotal_final2 = document.getElementById("sub_total_final2");
+          let envio = document.getElementById("envio");
+          let final_final = document.getElementById("monto_total");
+          let text_code = document.getElementById("code");
+          let label_descuento = document.getElementById("descuento");
+          const envio_pago = 50;
+          let descuento = 1;
+          label_descuento.textContent ="0"; 
+          console.log(descuento);    
+          carrito_compras.forEach(articulo =>{
+          let section_pagar =  `
+          <li class="lista">${articulo.nombre}</li>
+           `;
+          nombres_productos.innerHTML += section_pagar;
+          });
+          carrito_compras.forEach(articulo =>{
+            let section_cantidad =  `
+            <li class="lista">${articulo.cantidad}</li>
+             `;
+            cantidad_productos.innerHTML += section_cantidad;
+            });
+            carrito_compras.forEach(articulo =>{
+              let section_total =  `
+              <li class="lista">$ ${articulo.pagar}</li>
+               `;
+              totales.innerHTML += section_total;
+              });
+           console.log(carrito_compras[1].pagar);
+           let sub_total = 0;
+           carrito_compras.forEach(articulo =>{
+            sub_total += articulo.pagar;
+           });
+           console.log(sub_total);
+           subtotal_final2.innerHTML = sub_total;
+           envio.textContent = envio_pago;
+           let final_total = (sub_total + envio_pago )* descuento;
+           final_final.textContent = final_total;
+           console.log(descuento);
 
-        
+           text_code.addEventListener("input", () => {
+            if (text_code.value == "DISCOUNT10"){
+              descuento = .90;
+              console.log(descuento);
+              label_descuento.textContent = "-10%";
+              envio.textContent = envio_pago;
+           let final_total = (sub_total + envio_pago )* descuento;
+           final_final.textContent = final_total;
+            }
+            else if(text_code.value == ""){
+              descuento = 1;
+              label_descuento.textContent = "0";
+              let final_total = (sub_total + envio_pago )* descuento;
+           final_final.textContent = final_total;
+            }
+          }) ; 
+
         }});
-
+        let reinicio = document.getElementById("bttn_final");
+        reinicio.addEventListener("click", () => {
+          location.reload();
+        });
 });

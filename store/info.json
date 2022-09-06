@@ -4,6 +4,8 @@
     "descripcion": "Audifonos Bose alambricos alta fidelidad.",
     "precio": 3800.00,
     "stock": 5,
+    "cantidad": 1,
+    "pagar": 3800.00,
     "imagen": "https://assets.bose.com/content/dam/Bose_DAM/Web/consumer_electronics/global/products/headphones/soundtrue_around_ear_headphones_ii_apple/product_silo_images/soundtrue_ae_ii_charcoal_apple_EC_hero.psd/jcr:content/renditions/cq5dam.web.320.320.png"
   },
   { 
@@ -11,6 +13,8 @@
     "descripcion": "Drone de la marca DJI de tercera generacion",
     "precio": 8500,
     "stock": 5,
+    "cantidad": 1,
+    "pagar": 8500,
     "imagen": "https://www.pngall.com/wp-content/uploads/4/Drone-PNG.png"
   },
   {
@@ -18,6 +22,8 @@
     "descripcion": "Impresora de filamento 3-D ",
     "precio": 5200,
     "stock": 5,
+    "cantidad": 1,
+    "pagar": 5200,
     "imagen": "https://imagenpng.com/wp-content/uploads/2015/06/impresora.png"
   },
   {
@@ -25,6 +31,8 @@
     "descripcion": "Audifonos de uso deportivo",
     "precio": 1800,
     "stock": 5,
+    "cantidad": 1,
+    "pagar": 1800,
     "imagen": "https://cdn.shopify.com/s/files/1/0857/5574/products/BLACK1_3428d9d9-d3c1-4156-88f2-3473a4e05750_500x.png?v=1640747356"
   },
   {
@@ -32,6 +40,8 @@
     "descripcion": "Impresora de filamento 3-D",
     "precio": 3900,
     "stock": 5,
+    "cantidad": 1,
+    "pagar": 3900,
     "imagen": "https://i.pinimg.com/originals/54/c6/0d/54c60d5ed07bb714199312d133216d50.png"
   },
   {
@@ -39,6 +49,8 @@
     "descripcion": "Drone de la marca DJI de tercera generacion",
     "precio": 15000,
     "stock": 5,
+    "cantidad": 1,
+    "pagar": 15000,
     "imagen": "https://upload.wikimedia.org/wikipedia/commons/a/a1/DJI-Phantom2.png"
   },
   {
@@ -46,6 +58,8 @@
     "descripcion": "Audifonos Bose alambricos alta fidelidad.",
     "precio": 5900,
     "stock": 5,
+    "cantidad": 1,
+    "pagar": 5900,
     "imagen": "https://www.beatsbydre.com/content/dam/beats/web/product/headphones/solo3-wireless/pdp/solo3-pdp-p02.png.large.2x.png"
   },
   {
@@ -53,6 +67,8 @@
     "descripcion": "Impresora de filamento 3-D",
     "precio": 9800,
     "stock": 5,
+    "cantidad": 1,
+    "pagar": 9800,
     "imagen": "https://filament2print.com/img/cms/blog/35/prusa-mk3s.png"
   },
   {
@@ -60,6 +76,8 @@
     "descripcion": "Smartphone marca Apple de ultima generacion",
     "precio": 27500,
     "stock": 5,
+    "cantidad": 1,
+    "pagar": 27500,
     "imagen": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pro-max-gold-select?wid=940&hei=1112&fmt=png-alpha&.v=1645552346295"
   },
   {
@@ -67,6 +85,8 @@
     "descripcion": "Audifonos Bose alambricos alta fidelidad.",
     "precio": 4950,
     "stock": 5,
+    "cantidad": 1,
+    "pagar": 4950,
     "imagen": "https://www.sony.com.mx/image/5d02da5df552836db894cead8a68f5f3?fmt=png-alpha&wid=440"
   },
   {
@@ -74,6 +94,8 @@
     "descripcion": "Laptop Gamer 32g de Ram",
     "precio": 68600,
     "stock": 5,
+    "cantidad": 1,
+    "pagar": 68600,
     "imagen": "https://www.pngall.com/wp-content/uploads/3/Alienware-Laptop-PNG-File.png"
   },
   {
@@ -81,6 +103,8 @@
     "descripcion": "Compuradora marca Apple",
     "precio": 60000,
     "stock": 5,
+    "cantidad": 1,
+    "pagar": 60000,
     "imagen": "https://www.irepairs.es/wp-content/uploads/2018/12/reparar-imac.png"
   }
 
