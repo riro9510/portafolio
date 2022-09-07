@@ -347,17 +347,16 @@ caja_principal.innerHTML+=card;
 
            text_code.addEventListener("input", () => {
             if (text_code.value == "DISCOUNT10"){
-              descuento = .90;
+              descuento = .10;
               console.log(descuento);
               label_descuento.textContent = "-10%";
               envio.textContent = envio_pago;
-           let final_total = (sub_total + envio_pago )* descuento;
+           let final_total = ((sub_total + envio_pago ) - ((sub_total + envio_pago )* descuento));
            final_final.textContent = final_total;
             }
             else if(text_code.value == ""){
-              descuento = 1;
               label_descuento.textContent = "0";
-              let final_total = (sub_total + envio_pago )* descuento;
+              let final_total = sub_total + envio_pago ;
            final_final.textContent = final_total;
             }
           }) ; 
