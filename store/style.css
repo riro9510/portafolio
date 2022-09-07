@@ -255,9 +255,12 @@ html, body{
 }
 .container_descripcion{
     grid-area:descripcion;
-    width:60%;
+    width:90%;
     margin-left:7%;
     
+}
+.container_cantidad{
+    grid-area:cantidad;
 }
 .eliminar_i{
     grid-area:bote_basura;
@@ -314,10 +317,9 @@ html, body{
     display: grid;
     grid-template-areas:
     "nombre_final"
-    "cantidad_final"
     "monto_final_producto";
     grid-template:
-    "nombre_final cantidad_final monto_final_producto"/33% 33% 33%;
+    "nombre_final monto_final_producto"/60% 40%;
     
 }
 .lista{
@@ -332,10 +334,10 @@ html, body{
 .lista_productos_class{
     grid-area: nombre_final;
 
-}
+}/*
 .lista_cantidad_productos_class{
     grid-area: cantidad_final;
-}
+}*/
 .lista_total_pagar_productos_class{
     grid-area: monto_final_producto;
 }
@@ -382,3 +384,31 @@ html, body{
     height:45px;
 }
 /* /
+/* responsive */
+@media screen and (min-width: 1200px){
+    .main_class{
+        grid-template:
+        "container1 container2 container3 container4"
+        " container5 container6 container7 container8"
+        "container9 container10 container11 container12";
+    }
+    .container_carrito_class{
+        margin-top:5%;
+        margin-bottom:5%;
+        border-bottom:1px solid gray;
+        width:90%;
+        height:200px;
+        display:grid;
+        grid-template-areas:
+        "imagen"
+        "nombre"
+        "precio"
+        "descripcion"
+        "cantidad"
+        "bote_basura";
+        grid-template:
+        "bote_basura imagen cantidad nombre precio"50%
+        "bote_basura imagen cantidad descripcion precio"50%/10% 20% 30% 40% 10%;
+    
+    }
+}

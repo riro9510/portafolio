@@ -1,5 +1,5 @@
 const URL = "./info.json";
-
+let screen = document.documentElement.clientWidth;
 fetch(URL)
 .then(respuesta => respuesta.json())
 .then(respuesta =>{
@@ -89,7 +89,7 @@ caja_principal.innerHTML+=card;
      
      // click en carrito
      let nombres_productos = document.getElementById("lista_productos");
-          let cantidad_productos = document.getElementById("cantidad_productos");
+          /*let cantidad_productos = document.getElementById("cantidad_productos");*/
           let totales = document.getElementById("total_pagar_productos");
         let titulo_general = document.getElementById("titulo_nav");
         let carrito = document.getElementById("b_tienda_a");
@@ -108,12 +108,13 @@ caja_principal.innerHTML+=card;
           if (carrito_compras.length == 0 )
           {alert("selecciona al menos un articulo")}
           else if(carrito_compras.length >= 1){
+          //console.log(caja_principal.classList);
         carrito_section.classList.add("carrito_compras_section_class", "d-flex", "flex-column", "justify-content-start", "align-items-center");
         carrito_section.classList.remove("hidden");
         //pago.classList.add("hidden"); 
         titulo_general.textContent="Mi carrito";
         nombres_productos.textContent="";
-        cantidad_productos.textContent ="";
+       /* cantidad_productos.textContent ="";*/
          totales.textContent ="";
         p_section_card.forEach(element =>{
         element.classList.add("hidden");
@@ -242,7 +243,7 @@ caja_principal.innerHTML+=card;
  } });
         home.addEventListener("click", () => {
           nombres_productos.textContent ="";
-          cantidad_productos.textContent ="";
+        /*  cantidad_productos.textContent ="";*/
           totales.textContent ="";
           carrito_section.innerHTML="";
           li_home.click();
@@ -281,7 +282,7 @@ caja_principal.innerHTML+=card;
           });
           titulo_general.textContent="Mi pago";
           let nombres_productos = document.getElementById("lista_productos");
-          let cantidad_productos = document.getElementById("cantidad_productos");
+         /* let cantidad_productos = document.getElementById("cantidad_productos");*/
           let totales = document.getElementById("total_pagar_productos");
           let subtotal_final2 = document.getElementById("sub_total_final2");
           let envio = document.getElementById("envio");
@@ -303,6 +304,7 @@ caja_principal.innerHTML+=card;
            `;
           nombres_productos.innerHTML += section_pagar;
           });
+          /*
           let cantidad_section_pagar =
           `
           <li class="lista">Cantidad</li>
@@ -313,7 +315,7 @@ caja_principal.innerHTML+=card;
             <li class="lista">${articulo.cantidad}</li>
              `;
             cantidad_productos.innerHTML += section_cantidad;
-            });
+            });*/
             let pagar_section_total =  `
               <li class="lista">Total</li>
                `;
