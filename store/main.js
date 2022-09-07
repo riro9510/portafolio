@@ -33,7 +33,7 @@ let card = `
               <p class="color_text">${descripcion}</p>
             </div>
             <div class="d-flex justify-content-between align-items-center cuerpo1">
-              <h1 class="ms-4">${precio}</h1> 
+              <h1 class="ms-4">$${precio}</h1> 
               <button id="btnadd_${i-1}" class="me-4 caja_mas_class rounded">+</button>
             </div>
 
@@ -65,13 +65,33 @@ caja_principal.innerHTML+=card;
          let bttn_index = elemento.id.split("_")[1];
          console.log(elemento.id);
          console.log(bttn_index);
-         carrito_compras.push(respuesta[bttn_index]);
-         console.log(carrito_compras);
          elemento.classList.toggle("caja_activa_class");
+         let bttn_value = elemento.classList[3]
+         if ( bttn_value == "caja_activa_class" ){
+          carrito_compras.push(respuesta[bttn_index]); 
+          console.log(carrito_compras);
+          let agregado = `<i class="fa-solid fa-check"></i><span>Added</span>`;
+          elemento.innerHTML= agregado;
+          console.log("aqui no");
+         }
+         else{
+          let quitar_carrito = carrito_compras.indexOf(respuesta[bttn_index]);
+          carrito_compras.splice(quitar_carrito,1);
+          elemento.textContent ="+";
+          console.log("aqui si");
+          console.log(carrito_compras);
+         }
+         
+         console.log(carrito_compras);
+         
      });   
      }); 
      
      // click en carrito
+     let nombres_productos = document.getElementById("lista_productos");
+          let cantidad_productos = document.getElementById("cantidad_productos");
+          let totales = document.getElementById("total_pagar_productos");
+        let titulo_general = document.getElementById("titulo_nav");
         let carrito = document.getElementById("b_tienda_a");
         let li_carrito = document.getElementById("b_tienda");
         let carrito_section = document.getElementById("carrito_compras_section");
@@ -87,10 +107,14 @@ caja_principal.innerHTML+=card;
         carrito.addEventListener("click", () => {
           if (carrito_compras.length == 0 )
           {alert("selecciona al menos un articulo")}
-          else if(carrito_compras.length > 1){
+          else if(carrito_compras.length >= 1){
         carrito_section.classList.add("carrito_compras_section_class", "d-flex", "flex-column", "justify-content-start", "align-items-center");
         carrito_section.classList.remove("hidden");
         //pago.classList.add("hidden"); 
+        titulo_general.textContent="Mi carrito";
+        nombres_productos.textContent="";
+        cantidad_productos.textContent ="";
+         totales.textContent ="";
         p_section_card.forEach(element =>{
         element.classList.add("hidden");
         element.classList.remove("d-flex", "justify-content-center", "align-items-center");
@@ -208,16 +232,21 @@ caja_principal.innerHTML+=card;
         bote_basura.forEach(bote => {
           
           bote.addEventListener("click", () =>{
-            let indexb = bote.id.split("_")[1];;
-           delete(carrito_compras[indexb]);
+            let indexb = bote.id.split("_")[1];
+            carrito_compras.splice(indexb, 1);
+           //delete(carrito_compras[indexb]);
            secciones_carrito[indexb].textContent=""; 
            console.log(carrito_compras);
           });
         });
  } });
         home.addEventListener("click", () => {
+          nombres_productos.textContent ="";
+          cantidad_productos.textContent ="";
+          totales.textContent ="";
           carrito_section.innerHTML="";
           li_home.click();
+          titulo_general.textContent="Riro tecnology´s";
         carrito_section.classList.remove("carrito_compras_section_class", "d-flex", "flex-column", "justify-content-center", "align-items-center");
         carrito_section.classList.add("hidden");
         home_section.classList.remove("hidden");
@@ -237,7 +266,7 @@ caja_principal.innerHTML+=card;
         pago.addEventListener("click", () => {
           if (carrito_compras.length == 0 )
           {alert("selecciona al menos un articulo")}
-          else if(carrito_compras.length > 1){
+          else if(carrito_compras.length >= 1){
         section_pago.classList.remove("hidden");
         section_pago.classList.add("d-flex", "flex-column", "justify-content-around", "align-items-center", "pagar_section_class");
         section_pago_1.classList.remove("hidden");
@@ -250,6 +279,7 @@ caja_principal.innerHTML+=card;
         element.classList.remove("d-flex", "justify-content-center", "align-items-center");
         element.classList.add("hidden");
           });
+          titulo_general.textContent="Mi pago";
           let nombres_productos = document.getElementById("lista_productos");
           let cantidad_productos = document.getElementById("cantidad_productos");
           let totales = document.getElementById("total_pagar_productos");
@@ -262,25 +292,39 @@ caja_principal.innerHTML+=card;
           let descuento = 1;
           label_descuento.textContent ="0"; 
           console.log(descuento);    
+          let nombre_section_pagar =
+          `
+          <li class="lista">Articulo</li>
+           `;
+           nombres_productos.innerHTML += nombre_section_pagar;
           carrito_compras.forEach(articulo =>{
           let section_pagar =  `
           <li class="lista">${articulo.nombre}</li>
            `;
           nombres_productos.innerHTML += section_pagar;
           });
+          let cantidad_section_pagar =
+          `
+          <li class="lista">Cantidad</li>
+           `;
+           cantidad_productos.innerHTML += cantidad_section_pagar;
           carrito_compras.forEach(articulo =>{
             let section_cantidad =  `
             <li class="lista">${articulo.cantidad}</li>
              `;
             cantidad_productos.innerHTML += section_cantidad;
             });
+            let pagar_section_total =  `
+              <li class="lista">Total</li>
+               `;
+              totales.innerHTML += pagar_section_total;
             carrito_compras.forEach(articulo =>{
               let section_total =  `
               <li class="lista">$ ${articulo.pagar}</li>
                `;
               totales.innerHTML += section_total;
               });
-           console.log(carrito_compras[1].pagar);
+           //console.log(carrito_compras[1].pagar);
            let sub_total = 0;
            carrito_compras.forEach(articulo =>{
             sub_total += articulo.pagar;
