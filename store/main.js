@@ -162,68 +162,75 @@ caja_principal.innerHTML+=card;
          let label = document.querySelectorAll(".cantidad");
          let precio =document.querySelectorAll(".precio_carrito");
          /// boton menos 
-         menos.forEach(elemento =>{
-          let index_elemento = elemento.id.split("_")[1];
-          let label2 = label[index_elemento];
+         menos.forEach((elemento,index) =>{
          elemento.addEventListener("click",() =>{
-          label2; 
-          console.log(label[index_elemento]);
-          index_elemento;
-          let precio_final = carrito_compras[index_elemento].precio;
-          let cantidad_carrito = parseInt(label2.textContent);
+          // se obtiene el precio el precio del arreglo
+          let precio_final = carrito_compras[index].precio;
+          // Se obtiene la cantidad del label
+          let cantidad_carrito = parseInt(label[index].textContent);
           cantidad_carrito--;
+          // Si la cantidad es igual a uno
           if (cantidad_carrito == 1){
             elemento.disabled = true;
-            let suma2 = mas[index_elemento];
-            suma2.disabled = false;
-            label2.textContent = cantidad_carrito;
-          }
-          else if(cantidad_carrito >1 ){
-            elemento.disabled = false;
-            let suma2 = mas[index_elemento];
-            suma2.disabled = false;
-           cantidad_carrito;
-          console.log(cantidad_carrito);
-          label2.textContent = cantidad_carrito;
-          carrito_compras[index_elemento].cantidad=cantidad_carrito;
-          cantidad_a_pagar = precio[elemento.parentElement.id.split("_")[1]];
+            mas[index].disabled = false;
+            label[index].textContent = cantidad_carrito;
+            //  funciona? 
+            carrito_compras[index].cantidad=cantidad_carrito;
+          console.log(carrito_compras[index]);
           let total_pagar2 = cantidad_carrito * precio_final;
-          cantidad_a_pagar.textContent = total_pagar2;
-          carrito_compras[index_elemento].pagar =total_pagar2;
+          precio[index].textContent = total_pagar2;
+          carrito_compras[index].pagar =total_pagar2;
+            //funciona?
+          }
+          // Si la cantidad es mayor a uno sigue el flujo normal
+          else {
+            //Se activa boton de menos
+            elemento.disabled = false;
+            //Se activa el boton de mas
+            mas[index].disabled = false;
+
+          console.log(cantidad_carrito);
+          // Se escribe el nuevo valor  de cantidad_carrito
+          label[index].textContent = cantidad_carrito;
+          // Se sobre escribe la cantidad en el array del carrito
+          carrito_compras[index].cantidad=cantidad_carrito;
+          // Se obtiene el total cantidad por precio
+          let total_pagar2 = cantidad_carrito * precio_final;
+          // Se muestra el valor total 
+          precio[index].textContent = total_pagar2;
+          // Se sobre escribe la cantidad a pagar en el array
+          carrito_compras[index].pagar =total_pagar2;
         };});});
          //boton_mas
-         mas.forEach(element =>{
-          let index_elemento = element.id.split("_")[1];
-          let menos_2 = menos[index_elemento];
-          let label2 = label[index_elemento]; 
-          let cantidad_carrito = parseInt(label2.textContent);
+         mas.forEach((element,index) =>{
+          // Se obtiene la cantidad del label
          element.addEventListener("click",() =>{
-          console.log("cantidad de stock");
-          console.log(carrito_compras[index_elemento].stock);
+          let cantidad_carrito = parseInt(label[index].textContent);
           cantidad_carrito++;
-          console.log("cantidad solicitada");
-          console.log(cantidad_carrito);
-          if (cantidad_carrito == carrito_compras[index_elemento].stock){
-            menos_2.disabled = false;
+          // Si la cantidad es igual a uno
+          if (cantidad_carrito == carrito_compras[index].stock){
+            let precio_final = carrito_compras[index].precio; 
+            menos[index].disabled = false;
             element.disabled = true;  
-          label2.textContent = cantidad_carrito;
-            //cantidad_carrito = carrito_compras[bttn_index2].stock;
+          label[index].textContent = cantidad_carrito;
+            //  funciona? 
+          let total_pagar2 = carrito_compras[index].stock * precio_final;
+          precio[index].textContent = total_pagar2;
+          carrito_compras[index].pagar =total_pagar2;
+            //funciona?
+
           }
           else{
-          //element.disabled = true;
-          index_elemento;
-          menos_2;
-          menos_2.disabled = false;
-          let precio_final = carrito_compras[index_elemento].precio;
-          label2 = label[index_elemento]; 
-          console.log(label2);
-          label2.textContent = cantidad_carrito;
-          carrito_compras[index_elemento].cantidad=cantidad_carrito;
-          console.log(carrito_compras[index_elemento]);
-          let cantidad_a_pagar = precio[element.parentElement.id.split("_")[1]];
+            // se activa el boton de menos
+          menos[index].disabled = false;
+          // se obtiene el prvio del carrito
+          let precio_final = carrito_compras[index].precio; 
+          label[index].textContent = cantidad_carrito;
+          carrito_compras[index].cantidad=cantidad_carrito;
+          console.log(carrito_compras[index]);
           let total_pagar2 = cantidad_carrito * precio_final;
-          cantidad_a_pagar.textContent = total_pagar2;
-          carrito_compras[index_elemento].pagar =total_pagar2;
+          precio[index].textContent = total_pagar2;
+          carrito_compras[index].pagar =total_pagar2;
         }
   
         ;}); });
