@@ -1,0 +1,66 @@
+html,body{
+    width:100%;
+    height:100%;
+    box-sizing: border-box;
+}
+*{
+    margin:0;
+    padding:0;
+}
+.principal_container{
+    width: 100%;
+    height: 100%;
+    background-color: steelblue;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    gap:1.5rem;
+}
+.nombre{
+    width:550px;
+    height:230px;
+    
+    
+}
+.titulo{
+    width:100%;
+    border-radius: 5px;
+    animation-name: imagen;
+    animation-duration: 1.5s;
+}
+@keyframes imagen{
+    from{
+        opacity:0;
+        transform:translateY(-200%);}
+    to{opacity:1;
+        transform:translateY(0) ;}
+}
+.inicio{
+    font-size: 2rem;
+    padding:5px,25px,5px;
+    width:100px;
+    border-radius: 15px;
+    border:none;
+    background-color: white;
+    animation-name: boton;
+    animation-duration:2s;
+}
+@keyframes boton{
+    from{opacity:0;
+    transform: translateX(-150%);}
+    to{opacity: 1;
+    transform: translateX(0);}
+}
+.link{
+    font-style: none;
+    color:black;
+    text-decoration: none;
+
+}
+.link:visited{
+    color:black;
+}
+.link:focus{
+background-color: white;
+}

@@ -364,6 +364,10 @@ caja_principal.innerHTML+=card;
         }});
         let reinicio = document.getElementById("bttn_final");
         reinicio.addEventListener("click", () => {
+      
+          //let actualzar_stock = carrito_compras.indexOf(respuesta);
+          //console.log(actualzar_stock);
           location.reload();
+          //window.html2pdf().from(section_pago).save()
         });
 });
